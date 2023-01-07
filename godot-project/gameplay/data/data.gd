@@ -21,11 +21,9 @@ func set_fake_news(new_fake_news):
 
 func _process(delta):
 	var _collision = move_and_collide(velocity * speed * delta)
-
-
-func _on_visibility_notifier_screen_exited():
-	emit_signal("data_consumed", data_score)
-	queue_free()
+	if global_position.x <= -20:
+		emit_signal("data_consumed", data_score)
+		queue_free()
 
 
 func analyze(analysis_delta):

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/gui/gui.gd" type="Script" id=1]
+
+[node name="gui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="margin_container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_right = 1920.0
+margin_bottom = 100.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="top_bar" type="HBoxContainer" parent="margin_container"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 3830.0
+margin_bottom = 110.0
+
+[node name="life_panel" type="Panel" parent="margin_container/top_bar"]
+margin_right = 200.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+
+[node name="timer_container" type="CenterContainer" parent="margin_container/top_bar"]
+margin_left = 204.0
+margin_right = 3616.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="timer_panel" type="Panel" parent="margin_container/top_bar/timer_container"]
+margin_left = 1606.0
+margin_right = 1806.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+
+[node name="timer_label" type="Label" parent="margin_container/top_bar/timer_container/timer_panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "0:00"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="margin_container/top_bar"]
+margin_left = 3620.0
+margin_right = 3820.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )

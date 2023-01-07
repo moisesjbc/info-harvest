@@ -21,6 +21,8 @@ script = ExtResource( 5 )
 [node name="score" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[connection signal="new_data_filter_built" from="data_filters" to="score" method="_on_data_filters_new_data_filter_built"]
 [connection signal="elapsed_seconds_changed" from="timer" to="gui" method="_on_timer_elapsed_seconds_changed"]
 [connection signal="timeout" from="timer" to="timer" method="_on_timer_timeout"]
+[connection signal="current_score_changed" from="score" to="data_filters" method="_on_score_current_score_changed"]
 [connection signal="current_score_changed" from="score" to="gui" method="_on_score_current_score_changed"]

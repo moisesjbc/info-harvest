@@ -6,7 +6,7 @@ signal current_score_changed
 
 
 func _ready():
-	set_score(0)
+	set_score(100)
 
 
 func set_score(new_score):
@@ -16,3 +16,7 @@ func set_score(new_score):
 	
 func add_score(added_score):
 	set_score(current_score + added_score)
+
+
+func _on_data_filters_new_data_filter_built(new_data_filter_cost):
+	add_score(-new_data_filter_cost)

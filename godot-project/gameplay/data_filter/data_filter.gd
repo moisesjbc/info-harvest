@@ -50,3 +50,8 @@ func shoot(shoot_target_data):
 
 func display_influence_area(display_influence_area):
 	$influence_circle.visible = display_influence_area
+
+
+func _on_clickable_area_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		$improvement_panel.visible = true

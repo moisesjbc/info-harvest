@@ -28,7 +28,7 @@ func _process(delta):
 		if not new_data_filter_valid_position:
 			new_data_filter.modulate = Color.red
 		else:
-			new_data_filter.modulate = Color.orange
+			new_data_filter.modulate = Color.white
 
 
 func _input(event):

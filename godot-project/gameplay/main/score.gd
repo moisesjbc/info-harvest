@@ -12,3 +12,7 @@ func _ready():
 func set_score(new_score):
 	current_score = new_score
 	emit_signal("current_score_changed", current_score)
+	
+	
+func add_score(added_score):
+	set_score(current_score + added_score)

@@ -1,18 +1,22 @@
 extends KinematicBody2D
 
+
+signal data_consumed
+
+
 var speed = 150
 var velocity: Vector2 = Vector2(-1.0, 0.0)
-var data_type = DataType.VALID_INFO
 var remaining_analysis = 100.0
 
-enum DataType {
-	VALID_INFO,
-	FAKE_NEWS
-}
+var _is_fake_news: bool = false
+var global_score = null
+var data_score = 10
 
-func _ready():
-	if randf() < 1.0:
-		data_type = DataType.FAKE_NEWS
+
+func set_fake_news(new_fake_news):
+	_is_fake_news = new_fake_news
+	if _is_fake_news:
+		data_score = -data_score
 
 
 func _process(delta):
@@ -21,6 +25,7 @@ func _process(delta):
 
 func _on_visibility_notifier_screen_exited():
 	queue_free()
+	emit_signal("data_consumed", data_score)
 
 
 func analyze(analysis_delta):
@@ -35,11 +40,11 @@ func is_analyzed():
 
 
 func reveal_data_type():
-	if data_type == DataType.VALID_INFO:
+	if not _is_fake_news:
 		$sprite.modulate = Color.green
 	else:
 		$sprite.modulate = Color.red
 
 
 func is_fake_news():
-	return is_analyzed() and data_type == DataType.FAKE_NEWS
+	return _is_fake_news

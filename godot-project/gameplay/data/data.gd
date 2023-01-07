@@ -11,7 +11,7 @@ enum DataType {
 }
 
 func _ready():
-	if randf() < 0.50:
+	if randf() < 1.0:
 		data_type = DataType.FAKE_NEWS
 
 
@@ -39,3 +39,7 @@ func reveal_data_type():
 		$sprite.modulate = Color.green
 	else:
 		$sprite.modulate = Color.red
+
+
+func is_fake_news():
+	return is_analyzed() and data_type == DataType.FAKE_NEWS

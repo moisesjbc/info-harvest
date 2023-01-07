@@ -4,7 +4,7 @@
 [ext_resource path="res://gameplay/data_filter/data_filter.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 211.059
+radius = 878.185
 
 [node name="data_filter" type="Sprite"]
 modulate = Color( 0.964706, 0.713726, 0.0470588, 1 )

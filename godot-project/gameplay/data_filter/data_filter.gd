@@ -36,8 +36,9 @@ func _process(delta):
 
 
 func _draw():
-	if target_data:
-		draw_line(get_parent().position, to_local(target_data.global_position), Color.red, 3.0)
+	if active:
+		if target_data:
+			draw_line(get_parent().position, to_local(target_data.global_position), Color.red, 3.0)
 
 
 func shoot(shoot_target_data):
@@ -45,3 +46,7 @@ func shoot(shoot_target_data):
 	bullet.target_data = shoot_target_data
 	add_child(bullet)
 	bullet.global_position = global_position
+
+
+func display_influence_area(display_influence_area):
+	$influence_circle.visible = display_influence_area

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://gameplay/data_filter/data_filter.gd" type="Script" id=2]
+[ext_resource path="res://gameplay/data_filter/influence_circle.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 878.185
+radius = 242.349
 
 [node name="data_filter" type="Sprite"]
 modulate = Color( 0.964706, 0.713726, 0.0470588, 1 )
@@ -15,6 +16,12 @@ script = ExtResource( 2 )
 
 [node name="collider" type="CollisionShape2D" parent="influence_area"]
 shape = SubResource( 1 )
+
+[node name="influence_circle" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.5, 0 )
+scale = Vector2( 5.4, 5.4 )
+texture = ExtResource( 3 )
 
 [connection signal="body_entered" from="influence_area" to="." method="_on_influence_area_body_entered"]
 [connection signal="body_exited" from="influence_area" to="." method="_on_influence_area_body_exited"]

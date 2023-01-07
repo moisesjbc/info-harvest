@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://gameplay/data_filter/data_filter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gameplay/data_spawn/data_spawn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gameplay/data_filters/data_filters.tscn" type="PackedScene" id=4]
 
 [node name="main" type="Node2D"]
 
 [node name="data_spawn" parent="." instance=ExtResource( 2 )]
-
-[node name="data_filter" parent="." instance=ExtResource( 1 )]
-position = Vector2( 950, 496 )
 
 [node name="data_filters" parent="." instance=ExtResource( 4 )]

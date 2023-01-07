@@ -4,6 +4,7 @@ var data_in_area = []
 var analysis_delta = 50.0
 var target_data = null
 var bullet_scene = preload("res://gameplay/bullet/bullet.tscn")
+var active = true
 
 
 func _on_influence_area_body_entered(body):
@@ -19,7 +20,7 @@ func _on_influence_area_body_exited(body):
 
 
 func _process(delta):
-	if len(data_in_area):
+	if active and len(data_in_area):
 		target_data = data_in_area[0]
 		if not target_data.is_analyzed():
 			target_data.analyze(analysis_delta * delta)
@@ -44,4 +45,3 @@ func shoot(shoot_target_data):
 	bullet.target_data = shoot_target_data
 	add_child(bullet)
 	bullet.global_position = global_position
-	

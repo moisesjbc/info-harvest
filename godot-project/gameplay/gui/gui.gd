@@ -13,3 +13,7 @@ func _on_timer_elapsed_seconds_changed(new_elapsed_seconds):
 
 func _on_score_current_score_changed(current_score):
 	$margin_container/top_bar/score_panel/score_label.text = str(current_score)
+
+
+func _on_life_current_life_changed(current_life):
+	$margin_container/top_bar/life_panel/life_label.text = str(current_life)

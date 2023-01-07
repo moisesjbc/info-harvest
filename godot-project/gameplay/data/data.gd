@@ -24,8 +24,8 @@ func _process(delta):
 
 
 func _on_visibility_notifier_screen_exited():
-	queue_free()
 	emit_signal("data_consumed", data_score)
+	queue_free()
 
 
 func analyze(analysis_delta):

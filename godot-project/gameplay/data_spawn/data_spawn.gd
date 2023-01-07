@@ -14,5 +14,7 @@ func _on_spawn_timer_timeout():
 
 
 func _on_data_consumed(data_score):
-	if data_score > 0:
+	if data_score >= 0:
 		get_parent().get_node("score").add_score(data_score)
+	else:
+		get_parent().get_node("life").add_damage(-data_score)

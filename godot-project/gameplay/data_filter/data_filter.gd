@@ -40,7 +40,6 @@ func _draw():
 
 
 func shoot(shoot_target_data):
-	print("SHOOT!")
 	var bullet = bullet_scene.instance()
 	bullet.target_data = shoot_target_data
 	add_child(bullet)

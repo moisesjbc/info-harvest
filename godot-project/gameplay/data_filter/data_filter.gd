@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var data_in_area = []
 var scan_time = 1.0

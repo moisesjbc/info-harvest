@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gameplay/menus/improvement_panel.gd" type="Script" id=1]
 [ext_resource path="res://gui/panel/panel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://gameplay/data_filter/powerup.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -88,6 +89,11 @@ margin_top = 190.0
 margin_right = 380.0
 margin_bottom = 230.0
 text = "Close"
+
+[node name="powerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+bus = "SFX"
 
 [connection signal="pressed" from="panel/vbox_container/view/improvement_0" to="." method="_on_improvement_0_pressed"]
 [connection signal="pressed" from="panel/vbox_container/view/improvement_1" to="." method="_on_improvement_1_pressed"]

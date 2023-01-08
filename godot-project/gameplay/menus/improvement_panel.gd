@@ -75,18 +75,21 @@ func set_current_improvement_text(text):
 
 
 func _on_reduce_scan_time_pressed():
+	$powerup.play()
 	set_current_improvement_text(reduce_scan_time_str)
 	emit_signal("scan_time_reduced", scan_time_reduction, scan_time_reduction_cost)
 	close()
 
 
 func _on_increase_scan_area_pressed():
+	$powerup.play()
 	set_current_improvement_text(increase_scan_area_str)
 	emit_signal("scan_area_increased", scan_area_increment, scan_area_increment_cost)
 	close()
 
 
 func _on_increment_refutation_speed_pressed():
+	$powerup.play()
 	set_current_improvement_text(increase_refutation_time_str)
 	emit_signal("refutation_speed_increased", refutation_speed_increment, refutation_speed_increment_cost)
 	close()

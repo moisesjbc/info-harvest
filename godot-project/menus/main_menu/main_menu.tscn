@@ -56,17 +56,26 @@ margin_right = 760.0
 margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 20
 
 [node name="play_button" parent="center_container/panel/margin_container2/vbox_container/buttons_container" instance=ExtResource( 3 )]
 margin_top = 0.0
 margin_right = 760.0
-margin_bottom = 137.0
+margin_bottom = 79.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "NEW GAME"
 
+[node name="credits_menu_button" parent="center_container/panel/margin_container2/vbox_container/buttons_container" instance=ExtResource( 3 )]
+margin_top = 99.0
+margin_right = 760.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "CREDITS"
+
 [node name="exit_button" parent="center_container/panel/margin_container2/vbox_container/buttons_container" instance=ExtResource( 3 )]
-margin_top = 141.0
+margin_top = 198.0
 margin_right = 760.0
 margin_bottom = 278.0
 size_flags_horizontal = 3
@@ -74,4 +83,5 @@ size_flags_vertical = 3
 text = "EXIT"
 
 [connection signal="pressed" from="center_container/panel/margin_container2/vbox_container/buttons_container/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="center_container/panel/margin_container2/vbox_container/buttons_container/credits_menu_button" to="." method="_on_credits_menu_button_pressed"]
 [connection signal="pressed" from="center_container/panel/margin_container2/vbox_container/buttons_container/exit_button" to="." method="_on_exit_button_pressed"]

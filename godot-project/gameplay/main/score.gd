@@ -6,7 +6,7 @@ signal current_score_changed
 
 
 func _ready():
-	set_score(100)
+	set_score(300)
 
 
 func set_score(new_score):

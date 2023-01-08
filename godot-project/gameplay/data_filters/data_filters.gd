@@ -3,7 +3,7 @@ extends Node2D
 var data_filter_scene = preload("res://gameplay/data_filter/data_filter.tscn")
 var new_data_filter = null
 var new_data_filter_valid_position = false
-var new_data_filter_cost = 30
+var new_data_filter_cost = 100
 var score_node
 
 
@@ -17,7 +17,7 @@ func _ready():
 
 func _update_button_label():
 	if not new_data_filter:
-		$gui/creation_button/label.text = "COST: -30"
+		$gui/creation_button/label.text = "COST: -" + str(new_data_filter_cost)
 	else:
 		$gui/creation_button/label.text = "CANCEL"
 

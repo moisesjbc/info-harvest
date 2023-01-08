@@ -22,6 +22,13 @@ func _on_close_button_pressed():
 	visible = false
 
 
+func adjust_position():
+	if ($panel.get_global_rect().position.x + $panel.get_global_rect().size.x) > get_viewport().size.x:
+		global_position.x -= $panel.get_global_rect().size.x
+	if ($panel.get_global_rect().position.y + $panel.get_global_rect().size.y) > get_viewport().size.y:
+		global_position.y -= $panel.get_global_rect().size.y
+
+
 func open(score_node):
 	visible = true
 	$panel/vbox_container/view.visible = true
@@ -35,6 +42,8 @@ func open(score_node):
 	$panel/vbox_container/select/reduce_scan_time.text = reduce_scan_time_str
 	$panel/vbox_container/select/increase_scan_area.text = increase_scan_area_str
 	$panel/vbox_container/select/increment_refutation_speed.text = increase_refutation_time_str
+	
+	adjust_position()
 
 
 func update_buttons_status(current_score):

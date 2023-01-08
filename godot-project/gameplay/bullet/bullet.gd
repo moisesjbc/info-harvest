@@ -18,6 +18,7 @@ func _process(delta):
 
 func _on_bullet_body_entered(body):
 	if body == target_data:
+		get_node("/root/explosion").play()
 		target_data.queue_free()
 		queue_free()
 

@@ -21,3 +21,8 @@ func _on_restart_game_button_pressed():
 
 func _on_life_player_dead():
 	start()
+
+
+func _on_main_menu_button_pressed():
+	set_paused(false)
+	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")

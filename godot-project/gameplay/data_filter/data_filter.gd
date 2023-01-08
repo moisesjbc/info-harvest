@@ -70,4 +70,3 @@ func _on_improvement_panel_refutation_speed_increased(refutation_speed_increment
 func _on_improvement_panel_scan_area_increased(scan_area_increment):
 	$influence_area.scale.x += scan_area_increment
 	$influence_area.scale.y += scan_area_increment
-	print($influence_area.scale.x)

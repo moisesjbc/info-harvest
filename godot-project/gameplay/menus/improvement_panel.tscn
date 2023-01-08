@@ -22,12 +22,12 @@ custom_constants/margin_bottom = 10
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 390.0
-margin_bottom = 240.0
+margin_bottom = 258.0
 custom_constants/separation = 10
 
 [node name="view" type="VBoxContainer" parent="margin_container/vbox_container"]
 margin_right = 380.0
-margin_bottom = 200.0
+margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -39,32 +39,31 @@ text = "Current improvements"
 align = 1
 valign = 1
 
-[node name="improvement_1" type="Button" parent="margin_container/vbox_container/view"]
+[node name="improvement_0" type="Button" parent="margin_container/vbox_container/view"]
 margin_top = 24.0
 margin_right = 380.0
-margin_bottom = 76.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "[Select]"
+
+[node name="improvement_1" type="Button" parent="margin_container/vbox_container/view"]
+margin_top = 54.0
+margin_right = 380.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "[Select]"
 
 [node name="improvement_2" type="Button" parent="margin_container/vbox_container/view"]
-margin_top = 86.0
+margin_top = 84.0
 margin_right = 380.0
-margin_bottom = 138.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "[Select]"
-
-[node name="improvement_3" type="Button" parent="margin_container/vbox_container/view"]
-margin_top = 148.0
-margin_right = 380.0
-margin_bottom = 200.0
+margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "[Select]"
 
 [node name="select" type="VBoxContainer" parent="margin_container/vbox_container"]
-visible = false
 margin_top = 114.0
 margin_right = 380.0
 margin_bottom = 218.0
@@ -79,13 +78,13 @@ text = "Select improvement"
 align = 1
 valign = 1
 
-[node name="add_scan_speed" type="Button" parent="margin_container/vbox_container/select"]
+[node name="reduce_scan_time" type="Button" parent="margin_container/vbox_container/select"]
 margin_top = 24.0
 margin_right = 380.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "-0.1s scan speed [cost: 30]"
+text = "-0.1s scan time [cost: 30]"
 
 [node name="increase_scan_area" type="Button" parent="margin_container/vbox_container/select"]
 margin_top = 54.0
@@ -95,18 +94,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "+100 scan area [cost: 30]"
 
-[node name="improvement_3" type="Button" parent="margin_container/vbox_container/select"]
+[node name="increment_refutation_speed" type="Button" parent="margin_container/vbox_container/select"]
 margin_top = 84.0
 margin_right = 380.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "-0.1 filter speed [cost: 30]"
+text = "+100 refutation speed [cost: 30]"
 
 [node name="close_button" type="Button" parent="margin_container/vbox_container"]
-margin_top = 210.0
+margin_top = 228.0
 margin_right = 380.0
-margin_bottom = 230.0
+margin_bottom = 248.0
 text = "Close"
 
+[connection signal="pressed" from="margin_container/vbox_container/view/improvement_0" to="." method="_on_improvement_0_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/view/improvement_1" to="." method="_on_improvement_1_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/view/improvement_2" to="." method="_on_improvement_2_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/select/reduce_scan_time" to="." method="_on_reduce_scan_time_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/select/increase_scan_area" to="." method="_on_increase_scan_area_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/select/increment_refutation_speed" to="." method="_on_increment_refutation_speed_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/close_button" to="." method="_on_close_button_pressed"]

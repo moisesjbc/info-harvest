@@ -21,7 +21,7 @@ script = ExtResource( 2 )
 [node name="collider" type="CollisionShape2D" parent="influence_area"]
 shape = SubResource( 1 )
 
-[node name="influence_circle" type="Sprite" parent="."]
+[node name="influence_circle" type="Sprite" parent="influence_area"]
 visible = false
 position = Vector2( 0.5, 0 )
 scale = Vector2( 5.4, 5.4 )
@@ -41,4 +41,7 @@ shape = SubResource( 2 )
 
 [connection signal="body_entered" from="influence_area" to="." method="_on_influence_area_body_entered"]
 [connection signal="body_exited" from="influence_area" to="." method="_on_influence_area_body_exited"]
+[connection signal="refutation_speed_increased" from="improvement_panel" to="." method="_on_improvement_panel_refutation_speed_increased"]
+[connection signal="scan_area_increased" from="improvement_panel" to="." method="_on_improvement_panel_scan_area_increased"]
+[connection signal="scan_time_reduced" from="improvement_panel" to="." method="_on_improvement_panel_scan_time_reduced"]
 [connection signal="input_event" from="clickable_area" to="." method="_on_clickable_area_input_event"]

@@ -1,4 +1,4 @@
-extends Panel
+extends Node2D
 
 var current_improvement_index = -1
 signal scan_time_reduced
@@ -24,22 +24,23 @@ func _on_close_button_pressed():
 
 func open(score_node):
 	visible = true
-	$margin_container/vbox_container/view.visible = true
-	$margin_container/vbox_container/select.visible = false
+	$panel/vbox_container/view.visible = true
+	$panel/vbox_container/select.visible = false
+	$panel/vbox_container/title.text = "Current improvements"
 
 	self.score_node = score_node
 	score_node.connect("current_score_changed", self, "update_buttons_status")
 	update_buttons_status(score_node.current_score)
 
-	$margin_container/vbox_container/select/reduce_scan_time.text = reduce_scan_time_str
-	$margin_container/vbox_container/select/increase_scan_area.text = increase_scan_area_str
-	$margin_container/vbox_container/select/increment_refutation_speed.text = increase_refutation_time_str
+	$panel/vbox_container/select/reduce_scan_time.text = reduce_scan_time_str
+	$panel/vbox_container/select/increase_scan_area.text = increase_scan_area_str
+	$panel/vbox_container/select/increment_refutation_speed.text = increase_refutation_time_str
 
 
 func update_buttons_status(current_score):
-	$margin_container/vbox_container/select/reduce_scan_time.disabled = scan_time_reduction_cost > current_score
-	$margin_container/vbox_container/select/increase_scan_area.disabled = scan_area_increment_cost > current_score
-	$margin_container/vbox_container/select/increment_refutation_speed.disabled = refutation_speed_increment_cost > current_score
+	$panel/vbox_container/select/reduce_scan_time.disabled = scan_time_reduction_cost > current_score
+	$panel/vbox_container/select/increase_scan_area.disabled = scan_area_increment_cost > current_score
+	$panel/vbox_container/select/increment_refutation_speed.disabled = refutation_speed_increment_cost > current_score
 	
 
 func close():
@@ -49,8 +50,9 @@ func close():
 
 func select_improvement_index(new_improvement_index):
 	current_improvement_index = new_improvement_index
-	$margin_container/vbox_container/view.visible = false
-	$margin_container/vbox_container/select.visible = true
+	$panel/vbox_container/view.visible = false
+	$panel/vbox_container/select.visible = true
+	$panel/vbox_container/title.text = "Select improvement"
 
 
 func _on_improvement_0_pressed():
@@ -67,7 +69,7 @@ func _on_improvement_2_pressed():
 
 func set_current_improvement_text(text):
 	text.get_slice("[", 0)
-	var current_improvement_button = $margin_container/vbox_container/view.get_child(1 + current_improvement_index) as Button
+	var current_improvement_button = $panel/vbox_container/view.get_child(current_improvement_index) as Button
 	current_improvement_button.text = text
 	current_improvement_button.disabled = true
 

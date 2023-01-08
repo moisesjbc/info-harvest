@@ -39,10 +39,6 @@ texture = ExtResource( 3 )
 
 [node name="improvement_panel" parent="." instance=ExtResource( 4 )]
 visible = false
-margin_left = 24.0
-margin_top = 1.0
-margin_right = 424.0
-margin_bottom = 251.0
 
 [connection signal="input_event" from="data_filter/clickable_area" to="." method="_on_clickable_area_input_event"]
 [connection signal="body_entered" from="influence_area" to="." method="_on_influence_area_body_entered"]

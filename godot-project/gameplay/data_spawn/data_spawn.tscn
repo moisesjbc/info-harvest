@@ -22,4 +22,9 @@ autostart = true
 stream = ExtResource( 2 )
 volume_db = -20.0
 
+[node name="difficulty_timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]

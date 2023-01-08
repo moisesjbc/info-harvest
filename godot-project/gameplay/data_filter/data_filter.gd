@@ -2,7 +2,7 @@ extends Node2D
 
 var data_in_area = []
 var scan_time = 1.0
-var refutation_speed = 200
+var refutation_speed = 400
 var target_data = null
 var bullet_scene = preload("res://gameplay/bullet/bullet.tscn")
 var active = true

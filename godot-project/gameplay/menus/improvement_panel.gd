@@ -102,3 +102,12 @@ func _on_increment_refutation_speed_pressed():
 	set_current_improvement_text(increase_refutation_time_str)
 	emit_signal("refutation_speed_increased", refutation_speed_increment, refutation_speed_increment_cost)
 	close()
+
+
+func _input(event):
+	if visible \
+		and event is InputEventMouseButton \
+		and event.pressed \
+		and event.button_index == BUTTON_LEFT \
+		and not $panel.get_global_rect().has_point(get_global_mouse_position()):
+		close()

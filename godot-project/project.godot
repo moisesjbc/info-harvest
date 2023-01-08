@@ -14,6 +14,10 @@ config/name="Info harvest"
 run/main_scene="res://menus/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+button_pressed="*res://globals/button_pressed/button_pressed.tscn"
+
 [display]
 
 window/size/width=1920

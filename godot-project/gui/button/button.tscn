@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://gui/button/button.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
@@ -58,3 +59,6 @@ custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 3 )
 text = "RESTART GAME"
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="." to="." method="_on_restart_game_button_pressed"]

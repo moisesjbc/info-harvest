@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gameplay/gui/gui.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/data_spawn/data_spawn.tscn" type="PackedScene" id=2]
@@ -8,6 +8,20 @@
 [ext_resource path="res://gameplay/menus/game_over/game_over.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gameplay/main/life.gd" type="Script" id=7]
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=8]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://gameplay/gui/heart.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.811765, 0.572549, 0.572549, 1 )
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color( 0.443137, 0.105882, 0.105882, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 9 )
 
 [node name="main" type="Node"]
 script = ExtResource( 8 )
@@ -41,13 +55,25 @@ margin_bottom = 110.0
 [node name="life_panel" type="Panel" parent="gui/margin_container/top_bar"]
 margin_right = 200.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 200, 100 )
+rect_min_size = Vector2( 200, 50 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="life_label" type="Label" parent="gui/margin_container/top_bar/life_panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 90.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
+
+[node name="Sprite" type="Sprite" parent="gui/margin_container/top_bar/life_panel"]
+position = Vector2( 52, 45 )
+rotation = -0.785398
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
 
 [node name="timer_container" type="CenterContainer" parent="gui/margin_container/top_bar"]
 margin_left = 204.0

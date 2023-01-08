@@ -16,6 +16,10 @@ func set_score(new_score):
 	
 func add_score(added_score):
 	set_score(current_score + added_score)
+	
+
+func decrement_score(decremented_score):
+	set_score(current_score - decremented_score)
 
 
 func _on_data_filters_new_data_filter_built(new_data_filter_cost):

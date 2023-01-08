@@ -4,12 +4,15 @@ var data_filter_scene = preload("res://gameplay/data_filter/data_filter.tscn")
 var new_data_filter = null
 var new_data_filter_valid_position = false
 var new_data_filter_cost = 30
+var score_node
+
 
 signal new_data_filter_built
 
 
 func _ready():
 	_update_button_label()
+	score_node = get_parent().get_node("score")
 	
 
 func _update_button_label():
@@ -35,6 +38,7 @@ func _input(event):
 	if new_data_filter and event is InputEventMouseButton and not event.pressed and event.button_index == BUTTON_LEFT:
 		if new_data_filter_valid_position:
 			new_data_filter.active = true
+			new_data_filter.score_node = score_node
 			new_data_filter = null
 			emit_signal("new_data_filter_built", new_data_filter_cost)
 		else:

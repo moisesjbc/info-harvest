@@ -41,7 +41,7 @@ func reveal_data_type():
 	if not _is_fake_news:
 		$verified_valid.visible = true
 	else:
-		$sprite.modulate = Color.red
+		$verified_fake.visible = true
 
 
 func is_fake_news():

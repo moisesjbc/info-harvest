@@ -17,9 +17,9 @@ func _ready():
 
 func _update_button_label():
 	if not new_data_filter:
-		$gui/creation_button.text = "CREATE [cost: -30]"
+		$gui/creation_button/label.text = "COST: -30"
 	else:
-		$gui/creation_button.text = "CANCEL"
+		$gui/creation_button/label.text = "CANCEL"
 
 
 func _process(delta):
@@ -62,4 +62,9 @@ func display_influence_areas(display):
 
 
 func _on_score_current_score_changed(current_score):
-	$gui/creation_button.disabled = current_score < new_data_filter_cost
+	if current_score < new_data_filter_cost:
+		$gui/creation_button.disabled = true
+		$gui/creation_button/label.modulate = Color.red
+	else:
+		$gui/creation_button.disabled = false
+		$gui/creation_button/label.modulate = Color.white

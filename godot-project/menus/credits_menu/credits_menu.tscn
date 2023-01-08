@@ -72,6 +72,8 @@ Moisés José Bonilla Caraballo - [url=https://moisesjose.com]https://moisesjose
 Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url]
 GIMP - [url=https://www.gimp.org/]https://www.gimp.org/[/url]
 Ubuntu Bold Font - [url=https://design.ubuntu.com/font/]https://design.ubuntu.com/font/[/url]
+
+[color=#ff8000]Made for [url=https://ldjam.com/events/ludum-dare/52]Ludum Dare #52[/url] - Theme: Harvest[/color]
 [/center]"
 text = "Idea and development
 Moisés José Bonilla Caraballo - https://moisesjose.com
@@ -80,6 +82,8 @@ Used tools and resources
 Godot engine - https://godotengine.org/
 GIMP - https://www.gimp.org/
 Ubuntu Bold Font - https://design.ubuntu.com/font/
+
+Made for Ludum Dare #52 - Theme: Harvest
 "
 
 [node name="main_menu_button" parent="center_container/panel/margin_container2/vbox_container" instance=ExtResource( 4 )]

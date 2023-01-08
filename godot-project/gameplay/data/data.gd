@@ -12,6 +12,8 @@ var _is_fake_news: bool = false
 var global_score = null
 var data_score = 10
 
+var analyzing = false
+
 
 func set_fake_news(new_fake_news):
 	_is_fake_news = new_fake_news
@@ -24,9 +26,15 @@ func _process(delta):
 	if global_position.x <= -20:
 		emit_signal("data_consumed", data_score)
 		queue_free()
+		
+	# By default hide magnifying glass, if in next frame data is
+	# still being analysed, analyze() will make magnifying glass
+	# visible again.
+	$magnifying_glass.visible = false
 
 
 func analyze(analysis_delta):
+	$magnifying_glass.visible = true
 	remaining_analysis -= analysis_delta
 	if remaining_analysis <= 0.0:
 		remaining_analysis = 0.0
@@ -38,6 +46,7 @@ func is_analyzed():
 
 
 func reveal_data_type():
+	$magnifying_glass.visible = false
 	if not _is_fake_news:
 		$verified_valid.visible = true
 	else:

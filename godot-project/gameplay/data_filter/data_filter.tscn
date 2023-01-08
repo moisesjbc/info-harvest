@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gameplay/data_filter/fact_checker.png" type="Texture" id=1]
 [ext_resource path="res://gameplay/data_filter/data_filter.gd" type="Script" id=2]
 [ext_resource path="res://gameplay/data_filter/influence_circle.png" type="Texture" id=3]
 [ext_resource path="res://gameplay/menus/improvement_panel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameplay/data_filter/shoot.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 65, 97.5 )
@@ -39,6 +40,10 @@ texture = ExtResource( 3 )
 
 [node name="improvement_panel" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="input_event" from="data_filter/clickable_area" to="." method="_on_clickable_area_input_event"]
 [connection signal="body_entered" from="influence_area" to="." method="_on_influence_area_body_entered"]
